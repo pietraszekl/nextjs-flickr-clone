@@ -1,7 +1,18 @@
 {
   "name": "nextjs-flickr",
+  "author": "Lukasz Pietraszek",
   "version": "0.1.0",
+  "license": "MIT",
+  "description": "Flickr Clone",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pietraszekl/nextjs-flickr-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pietraszekl/nextjs-flickr-clone/issues"
+  },
+  "homepage": "https://github.com/pietraszekl/nextjs-flickr-clone#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
