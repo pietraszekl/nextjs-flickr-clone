@@ -2,23 +2,19 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Layout from '@/components/Layout';
 import Footer from '@/components/Footer';
+import ListView from '@/components/ListView';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Flickr Clone by Lukasz Pietraszek</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
 
       <Layout>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <p>
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <ListView />
       </Layout>
 
       <Footer />

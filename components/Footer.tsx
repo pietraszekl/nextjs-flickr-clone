@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import { FOOTER } from '@/lib/constants';
 
 const Footer = () => (
   <>
-    <footer>Flickr clone by Lukasz Pietraszek</footer>
+    <footer className="border-t p-4 text-center text-gray-700">{FOOTER}</footer>
   </>
 );
 
