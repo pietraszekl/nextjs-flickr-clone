@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Test assignment for Eclipse
 
-## Getting Started
+## TODO
 
-First, run the development server:
+- tests
+- PDP
+- fix load more
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Done
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- NextJS
+- TailwindCSS
+- Typescript
+- Husky
+- Commitizen
+- [Deployed to Vercel](https://nextjs-flickr-clone.vercel.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Notes
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- API URL provided in assignment is not returning JSON object by default. It can be fixed by adding `nojsoncallback=1`
+- To implement load more functionality - I have decided to change API from public to custom one hence API key is now required.
+- Google +1 - this service is not actively maintained
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Task Requirements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Layout should match the provided wireframes
+- Look and feel is up to you, flat colours for borders and background are all that's expected
+- Site should use responsive techniques to ensure it works on a range of devices
+- Must be built using HTML, CSS and JavaScript (SCSS or Less are encouraged)
+- Use any 3rd party libs you like (as long as they have a weak copyleft license)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Search items e.g. a free-text search box where text entered is matched against tags
+- Infinite scrolling or "Load more" style pagination
+- Google +1 button for results
+- Build process for generating production-ready code
+- Tests (unit tests, e2e tests, etc)
+- Also, feel free to include any other features that you think the app could benefit from.

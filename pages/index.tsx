@@ -1,27 +1,24 @@
 import Head from 'next/head';
-import Header from '@/components/Header';
-import Layout from '@/components/Layout';
-import Footer from '@/components/Footer';
+import SiteHeader from '@/components/SiteHeader';
+import MainLayout from '@/components/MainLayout';
+import SiteFooter from '@/components/SiteFooter';
+import ListView from '@/components/ListView';
+import { FLICKR_DEFAULT_SEARCH } from '@/lib/constants';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Flickr Clone by Lukasz Pietraszek</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <SiteHeader />
 
-      <Layout>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <p>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </Layout>
+      <MainLayout>
+        <ListView defaultTag={FLICKR_DEFAULT_SEARCH} />
+      </MainLayout>
 
-      <Footer />
+      <SiteFooter />
     </>
   );
 }
