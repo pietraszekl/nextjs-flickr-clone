@@ -4,68 +4,55 @@ import useSWR from 'swr';
 import LoadingSpinner from './LoadingSpinner';
 import ListItem from './ListItem';
 
-function ListView({ defaultTag }) {
-  let itemsList;
-  let items;
-
-  let loadMoreButton;
-  let itemsPerPage = 2;
-  const defaultPage = 1;
-  const [currentPage, setCurrentPage] = useState(defaultPage);
-  const [searchedTag, setSearchedTag] = useState(defaultTag);
-  const searchField = useRef(null);
+function Page({ index, searchedTag }) {
+  const itemsPerPage = 2;
   const { data } = useSWR(
-    ['/api/photos', searchedTag, itemsPerPage, defaultPage],
+    ['/api/photos', searchedTag, itemsPerPage, index],
     fetcher
   );
-  const extraData = useSWR(
-    ['/api/photos', searchedTag, itemsPerPage, currentPage],
-    fetcher
-  );
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const searchValue = searchField.current.value.replace('\n', '\n\n');
-    setSearchedTag(searchValue);
-  };
-  const onLoadMore = (e) => {
-    e.preventDefault();
-
-    setCurrentPage(currentPage + 1);
-    console.log('original ', data.photos.photos.photo);
-
-    console.log('loadMoreData', extraData.data.photos.photos.photo);
-
-    //items = [...extraData.data.photos.photos.photo, ...items];
-    items = [].concat(
-      extraData.data.photos.photos.photo,
-      data.photos.photos.photo
-    );
-    console.log('mergedItems', items);
-  };
-
+  let itemsList;
   if (!data) {
     itemsList = <LoadingSpinner />;
   }
   if (data) {
-    items = data.photos.photos.photo;
-    if (!items.length) {
-      itemsList = 'No results';
-    } else {
-      itemsList = items.map((item, index) => (
-        <ListItem key={index} item={item} />
-      ));
-    }
-
-    loadMoreButton = (
-      <button
-        type="button"
-        className="border block w-full p-4 my-4 bg-gray-200 hover:bg-gray-700 hover:text-gray-100 font-bold"
-        onClick={onLoadMore}
-      >
-        Load more
-      </button>
-    );
+    const items = data.photos.photos.photo;
+    itemsList = items.map((item, index) => (
+      <ListItem key={index} item={item} />
+    ));
   }
+
+  return itemsList;
+}
+
+function ListView({ defaultTag }) {
+  const searchField = useRef(null);
+  const [cnt, setCnt] = useState(1);
+  const [searchedTag, setSearchedTag] = useState(defaultTag);
+  const pages = [];
+  for (let i = 1; i <= cnt; i++) {
+    pages.push(<Page index={i} key={i} searchedTag={searchedTag} />);
+  }
+
+  const onLoadMore = () => {
+    setCnt(cnt + 1);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setCnt(1);
+    const searchValue = searchField.current.value.replace('\n', '\n\n');
+    setSearchedTag(searchValue);
+  };
+
+  const loadMoreButton = (
+    <button
+      type="button"
+      className="border block w-full p-4 my-4 bg-gray-200 hover:bg-gray-700 hover:text-gray-100 font-bold"
+      onClick={onLoadMore}
+    >
+      Load more
+    </button>
+  );
 
   return (
     <>
@@ -79,7 +66,7 @@ function ListView({ defaultTag }) {
           ref={searchField}
         ></input>
       </form>
-      {itemsList}
+      {pages}
       {loadMoreButton}
     </>
   );
