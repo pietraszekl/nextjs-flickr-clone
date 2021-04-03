@@ -1,8 +1,10 @@
-const fetcher = async (url, token) => {
+const fetcher = async (url, searchedTag, itemsPerPage, currentPage) => {
   const res = await fetch(url, {
-    method: 'GET',
-    headers: new Headers({ 'Content-Type': 'application/json', token }),
-    credentials: 'same-origin'
+    headers: {
+      searchedtag: searchedTag,
+      itemsperpage: itemsPerPage,
+      currentpage: currentPage
+    }
   });
 
   return res.json();

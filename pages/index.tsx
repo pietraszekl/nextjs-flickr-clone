@@ -1,8 +1,9 @@
 import Head from 'next/head';
-import Header from '@/components/Header';
-import Layout from '@/components/Layout';
-import Footer from '@/components/Footer';
+import SiteHeader from '@/components/SiteHeader';
+import MainLayout from '@/components/MainLayout';
+import SiteFooter from '@/components/SiteFooter';
 import ListView from '@/components/ListView';
+import { FLICKR_DEFAULT_SEARCH } from '@/lib/constants';
 
 export default function Home() {
   return (
@@ -11,13 +12,13 @@ export default function Home() {
         <title>Flickr Clone by Lukasz Pietraszek</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <SiteHeader />
 
-      <Layout>
-        <ListView />
-      </Layout>
+      <MainLayout>
+        <ListView defaultTag={FLICKR_DEFAULT_SEARCH} />
+      </MainLayout>
 
-      <Footer />
+      <SiteFooter />
     </>
   );
 }
