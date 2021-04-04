@@ -3,7 +3,6 @@ import { getAllPhotos } from '@/lib/flickr';
 export default async (req, res) => {
   const { photos, error } = await getAllPhotos(
     req.headers.searchedtag,
-    req.headers.itemsperpage,
     req.headers.currentpage
   );
 
