@@ -1,8 +1,7 @@
-const fetcher = async (url, searchedTag, itemsPerPage, currentPage) => {
+const fetcher = async (url, searchedTag, currentPage) => {
   const res = await fetch(url, {
     headers: {
       searchedtag: searchedTag,
-      itemsperpage: itemsPerPage,
       currentpage: currentPage
     }
   });

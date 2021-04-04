@@ -5,11 +5,7 @@ import LoadingSpinner from './LoadingSpinner';
 import ListItem from './ListItem';
 
 function Page({ index, searchedTag }) {
-  const itemsPerPage = 2;
-  const { data } = useSWR(
-    ['/api/photos', searchedTag, itemsPerPage, index],
-    fetcher
-  );
+  const { data } = useSWR(['/api/photos', searchedTag, index], fetcher);
   let itemsList;
   if (!data) {
     itemsList = <LoadingSpinner />;

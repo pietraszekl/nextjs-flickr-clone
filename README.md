@@ -2,9 +2,8 @@
 
 ## TODO
 
-- tests
-- PDP
-- Google + / Social media share
+- e2e tests
+
 
 ## Done
 
@@ -15,6 +14,8 @@
 - Commitizen
 - Absolute imports
 - SWR
+- Search
+- Unit tests
 - [Deployed to Vercel](https://nextjs-flickr-clone.vercel.app/)
 
 ---

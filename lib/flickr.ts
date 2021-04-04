@@ -1,9 +1,9 @@
 import { FLICKR_PHOTOS_PUBLIC, FLICKR_PHOTO_INFO } from './constants';
 
-export async function getAllPhotos(searchedTag, itemsPerPage, currentPage) {
+export async function getAllPhotos(searchedTag, currentPage) {
   try {
     const baseUrl = FLICKR_PHOTOS_PUBLIC;
-    const requestUrl = `${baseUrl}&tags=${searchedTag}&page=${currentPage}&per_page=${itemsPerPage}`;
+    const requestUrl = `${baseUrl}&tags=${searchedTag}&page=${currentPage}`;
     const res = await fetch(requestUrl);
     const photos = await res.json();
     return { photos };
