@@ -9,9 +9,7 @@ jobs:
 
       - name: Start App
         run: |
-          npm
           NODE_ENV=test npm run build
-          NODE_ENV=test npm run start &
 
       - name: Run E2E
         run: |
