@@ -1,11 +1,6 @@
 # Flickr Clone
 
-## TODO
-
-- e2e tests
-
-
-## Done
+## Stack
 
 - NextJS
 - TailwindCSS
@@ -15,7 +10,9 @@
 - Absolute imports
 - SWR
 - Search
-- Unit tests
+- Unit tests via Jest & React Testing Library
+- e2e tests via Cypress
+- Share Photo via Twitter
 - [Deployed to Vercel](https://nextjs-flickr-clone.vercel.app/)
 
 ---
@@ -24,7 +21,7 @@
 
 - API URL provided in assignment is not returning JSON object by default. It can be fixed by adding `nojsoncallback=1`
 - To implement load more functionality - I have decided to change API from public to custom one hence API key is now required.
-- Google +1 - this service is not actively maintained
+- Google +1 - this service is not actively maintained hence replaced by Twitter Share button
 
 ---
 

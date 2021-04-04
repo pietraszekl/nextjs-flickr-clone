@@ -1,7 +1,7 @@
 import React from 'react';
 import NextImage from 'next/image';
 
-const Image = ({ item, width, height, layout }) => (
+const Image = ({ item, width, height, layout, className }) => (
   <>
     <NextImage
       src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}.jpg`}
@@ -9,6 +9,7 @@ const Image = ({ item, width, height, layout }) => (
       height={height ? height : ''}
       layout={layout ? layout : 'intrinsic'}
       alt={item.title ? item.title : 'Photo details'}
+      className={className}
     />
   </>
 );
