@@ -6,18 +6,21 @@ import Image from '@/components/Image';
 
 const ListItem = ({ item }: FlickrItem) => {
   return (
-    <div
-      data-testid="list-item"
-      className="border-b bg-white overflow-hidden flex w-full  "
-    >
-      <div className="relative z-20 overflow-hidden flex-none">
+    <div className="border-b bg-white  md:flex md:w-full  ">
+      <div className="relative z-20 ">
         <Link as={item.id} href="/[item]">
-          <a className="cursor-pointer">
-            <Image item={item} width="" height="" layout="" />
+          <a className="cursor-pointer mx-auto block">
+            <Image
+              item={item}
+              width="200"
+              height=""
+              layout=""
+              className="mx-auto block"
+            />
           </a>
         </Link>
       </div>
-      <div className="self-start flex-auto flex flex-wrap items-baseline p-6">
+      <div className="self-start flex-auto flex flex-wrap items-baseline pb-2  md:pb-0 md:p-6">
         <div className="w-full relative flex flex-wrap items-baseline -mt-6 pt-6 pb-4">
           <Link as={item.id} href="[slug]">
             <h2 className="font-bold text-xl cursor-pointer">
