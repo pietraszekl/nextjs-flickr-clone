@@ -29,6 +29,7 @@ function ListView({ defaultTag }) {
   const [cnt, setCnt] = useState(1);
   const [searchedTag, setSearchedTag] = useState(defaultTag);
   const pages = [];
+
   for (let i = 1; i <= cnt; i++) {
     pages.push(<Page index={i} key={i} searchedTag={searchedTag} />);
   }
