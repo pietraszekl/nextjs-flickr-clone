@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "description": "Flickr Clone",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pietraszekl/nextjs-flickr-clone.git"
