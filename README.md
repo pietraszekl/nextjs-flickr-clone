@@ -1,10 +1,10 @@
-# Test assignment for Eclipse
+# Flickr Clone
 
 ## TODO
 
 - tests
 - PDP
-- fix load more
+- Google + / Social media share
 
 ## Done
 
@@ -13,6 +13,8 @@
 - Typescript
 - Husky
 - Commitizen
+- Absolute imports
+- SWR
 - [Deployed to Vercel](https://nextjs-flickr-clone.vercel.app/)
 
 ---
