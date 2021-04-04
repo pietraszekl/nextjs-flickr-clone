@@ -22,7 +22,6 @@ const Photo = () => {
   if (!data) view = <LoadingSpinner />;
   if (data) {
     pageTitle = data.photoItem.photo.title._content;
-    console.log('data.photoItem.photo', data.photoItem.photo);
     const item = {
       ...data.photoItem.photo
     };

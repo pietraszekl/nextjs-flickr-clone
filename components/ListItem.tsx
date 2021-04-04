@@ -3,11 +3,13 @@ import Link from 'next/link';
 import { parseISO, format } from 'date-fns';
 import { FlickrItem } from '@/types/components';
 import Image from '@/components/Image';
-import { useRouter } from 'next/router';
 
 const ListItem = ({ item }: FlickrItem) => {
   return (
-    <div className="border-b bg-white overflow-hidden flex w-full  ">
+    <div
+      data-testid="list-item"
+      className="border-b bg-white overflow-hidden flex w-full  "
+    >
       <div className="relative z-20 overflow-hidden flex-none">
         <Link as={item.id} href="/[item]">
           <a className="cursor-pointer">

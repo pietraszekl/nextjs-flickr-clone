@@ -22,9 +22,12 @@ const ItemDetails = ({ item }: PhotoItem) => {
             <li>
               Tags:{' '}
               {item.tags.tag.map((tag) => (
-                <div className="p-1 bg-gray-300 inline-block mr-1 mb-1">
+                <span
+                  key={tag.id}
+                  className="p-1 bg-gray-300 inline-block mr-1 mb-1"
+                >
                   {tag.raw}
-                </div>
+                </span>
               ))}
             </li>
             <li>{item.description._content}</li>

@@ -40,7 +40,7 @@ export interface PhotoItem {
       username: string;
     };
     tags: {
-      tag: [{ raw: string }];
+      tag: [{ raw: string; id: string }];
     };
   };
 }
