@@ -13,12 +13,19 @@ const ItemDetails = ({ item }: PhotoItem) => {
       <h1 className="font-bold text-3xl mb-4">{item.title._content}</h1>
       <div className="md:grid md:grid-cols-3 md:gap-6">
         <div className="mt-5 md:mt-0 md:col-span-2  mb-4">
-          <Image item={item} width="500" height="500" layout="responsive" />
+          <Image
+            item={item}
+            width="500"
+            height="500"
+            layout="responsive"
+            className=""
+          />
         </div>
         <div className="md:col-span-1">
           <ul>
             <li>Author: {item.owner.username}</li>
             <li>Date: {item.dateuploaded}</li>
+            <li>{item.description._content}</li>
             <li>
               Tags:{' '}
               {item.tags.tag.map((tag) => (
@@ -30,7 +37,6 @@ const ItemDetails = ({ item }: PhotoItem) => {
                 </span>
               ))}
             </li>
-            <li>{item.description._content}</li>
           </ul>
         </div>
       </div>

@@ -13,6 +13,7 @@ const Header = () => (
                 alt="Flickr clone"
                 width={100}
                 height={30}
+                data-cy="header-logo"
               />
             </div>
             <div className="block">
