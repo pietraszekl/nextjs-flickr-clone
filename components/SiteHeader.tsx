@@ -1,9 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { Header } from 'types/components';
 import Link from 'next/link';
 
-const SiteHeader = ({}: Header) => (
+const SiteHeader = () => (
   <>
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

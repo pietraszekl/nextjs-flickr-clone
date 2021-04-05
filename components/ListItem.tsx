@@ -5,16 +5,24 @@ import { FlickrItem } from '@/types/components';
 import Image from '@/components/Image';
 
 const ListItem = ({ item }: FlickrItem) => {
+  const imageItem = {
+    server: item.server,
+    title: {
+      _content: item.title
+    },
+    id: item.id,
+    secret: item.secret
+  };
   return (
     <div className="border-b bg-white  md:flex md:w-full  ">
       <div className="relative z-20 ">
         <Link as={item.id} href="/[item]">
           <a className="cursor-pointer mx-auto block">
             <Image
-              item={item}
+              item={imageItem}
               width="200"
               height=""
-              layout=""
+              layout="intrinsic"
               className="mx-auto block"
             />
           </a>
