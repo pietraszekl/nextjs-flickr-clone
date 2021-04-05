@@ -44,3 +44,32 @@ export interface PhotoItem {
     };
   };
 }
+
+export interface FlickrImage {
+  item: {
+    server: string;
+    title: {
+      _content: string;
+    };
+    id: string;
+    secret: string;
+  };
+  width: string;
+  height: string;
+  layout: 'fixed' | 'intrinsic' | 'responsive';
+  className: string;
+}
+
+export interface PageItem {
+  index: number;
+  searchedTag: string;
+}
+
+export interface List {
+  defaultTag: string;
+}
+
+export interface ShareItem {
+  title: string;
+  url: string;
+}

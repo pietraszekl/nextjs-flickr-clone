@@ -1,5 +1,6 @@
 # Flickr Clone
 
+![dev branch](https://github.com/pietraszekl/nextjs-flickr-clone/actions/workflows/e2e.yml/badge.svg?branch=develop)
 
 ## Stack
 
@@ -14,6 +15,7 @@
 - Unit tests via Jest & React Testing Library
 - e2e tests via Cypress
 - Share Photo via Twitter
+- CI/CD via GitHub Actions
 - [Deployed to Vercel](https://nextjs-flickr-clone.vercel.app/)
 
 ---

@@ -25,7 +25,8 @@
     "test:e2e": "start-server-and-test dev 3000 cy:open",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "serve:lhci": "NODE_ENV=production npm run start"
   },
   "dependencies": {
     "cz-conventional-changelog": "^3.3.0",
