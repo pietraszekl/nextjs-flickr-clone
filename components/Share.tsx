@@ -1,7 +1,8 @@
+import { ShareItem } from '@/types/components';
 import Link from 'next/link';
 import React from 'react';
 
-export default function Share({ title, url }) {
+export default function Share({ title, url }: ShareItem) {
   const shareUrl = `https://twitter.com/share?text=${title}&url=${url}&via=pietraszekl`;
   return (
     <div className="p-4 bg-gray-200 dark:bg-gray-800 dark:text-gray-400">

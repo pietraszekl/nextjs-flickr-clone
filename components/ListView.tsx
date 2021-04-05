@@ -1,33 +1,15 @@
 import { useRef, useState } from 'react';
-import fetcher from '@/utils/fetcher';
-import useSWR from 'swr';
-import LoadingSpinner from './LoadingSpinner';
-import ListItem from './ListItem';
+import { List } from '@/types/components';
+import LoadMorePage from '@/components/LoadMorePage';
 
-function Page({ index, searchedTag }) {
-  const { data } = useSWR(['/api/photos', searchedTag, index], fetcher);
-  let itemsList;
-  if (!data) {
-    itemsList = <LoadingSpinner />;
-  }
-  if (data) {
-    const items = data.photos.photos.photo;
-    itemsList = items.map((item, index) => (
-      <ListItem key={index} item={item} />
-    ));
-  }
-
-  return itemsList;
-}
-
-function ListView({ defaultTag }) {
+const ListView = ({ defaultTag }: List) => {
   const searchField = useRef(null);
   const [cnt, setCnt] = useState(1);
   const [searchedTag, setSearchedTag] = useState(defaultTag);
   const pages = [];
 
   for (let i = 1; i <= cnt; i++) {
-    pages.push(<Page index={i} key={i} searchedTag={searchedTag} />);
+    pages.push(<LoadMorePage index={i} key={i} searchedTag={searchedTag} />);
   }
 
   const onLoadMore = () => {
@@ -67,6 +49,6 @@ function ListView({ defaultTag }) {
       {loadMoreButton}
     </>
   );
-}
+};
 
 export default ListView;
